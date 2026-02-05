@@ -1,0 +1,10 @@
+def longestCommonPrefix(strs):
+    if not strs:
+        return ""
+    
+    for i in range(len(strs[0])):          # check each character of the first word
+        char = strs[0][i]
+        for s in strs[1:]:                 # compare with all other words
+            if i == len(s) or s[i] != char:
+                return strs[0][:i]         # return prefix up to mismatch
+    return strs[0]
